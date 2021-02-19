@@ -1,6 +1,9 @@
 <div class="planets-layout">
-    <app-planets-item 
-        *ngFor="let planet of planets"
-        [planet]="planet">
+    <app-planets-item *ngFor="let planet of planets" [planet]="planet">
     </app-planets-item>
+</div>
+<div class="load-more-button">
+    <button mat-button color="warn" (click)="getNextPageOfPlanets()" [disabled]="isDisabledButton | async">
+        Load mode
+    </button>
 </div>
