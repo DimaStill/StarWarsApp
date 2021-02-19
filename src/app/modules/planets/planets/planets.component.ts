@@ -25,4 +25,9 @@ export class PlanetsComponent implements OnInit {
   getNextPageOfPlanets() {
     this.planetService.getPlanetsByNumberPage(++this.loadedPage);
   }
+
+  openPlanetDetails(planet: IPlanet) {
+    this.planetService.setActivePlanet(planet);
+    this.router.navigate(['planets/details'])
+  }
 }

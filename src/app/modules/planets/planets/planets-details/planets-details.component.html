@@ -1,0 +1,14 @@
+<mat-card class="planet-details-card" *ngIf="planet$ | async as planet">
+    <mat-card-header>
+      <mat-card-title>{{ planet.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Rotation period: {{ planet.rotation_period }}</p>
+        <p>Diameter: {{ planet.diameter }}</p>
+        <p>Climate: {{ planet.climate }}</p>
+        <p>Gravity: {{ planet.gravity }}</p>
+        <p>Terrain: {{ planet.terrain }}</p>
+        <p>Population: {{ planet.population }}</p>
+        <!-- <p>Residents: {{ planet.residents }}</p> -->
+      </mat-card-content>
+</mat-card>  
