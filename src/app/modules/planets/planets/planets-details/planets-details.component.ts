@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
 import { PeopleService } from 'src/app/core/services/people.service';
 import { PlanetService } from 'src/app/core/services/planet.service';
@@ -8,7 +8,7 @@ import { PlanetService } from 'src/app/core/services/planet.service';
   templateUrl: './planets-details.component.html',
   styleUrls: ['./planets-details.component.scss']
 })
-export class PlanetsDetailsComponent implements OnInit {
+export class PlanetsDetailsComponent implements OnInit, OnDestroy {
 
   planet$ = this.planetService.activePlanet$;
   residents$ = this.planet$.pipe(
@@ -21,5 +21,9 @@ export class PlanetsDetailsComponent implements OnInit {
     private readonly peopleService: PeopleService) { }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy() {
+    this.planetService.setActivePlanet(undefined);
   }
 }
