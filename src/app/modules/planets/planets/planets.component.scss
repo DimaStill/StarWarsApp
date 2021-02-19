@@ -8,3 +8,12 @@
     margin: auto;
     width: fit-content;
 }
+
+.loaded-page {
+    color: #f2e28a;
+    position: fixed;
+    background-color: #ed4259;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}

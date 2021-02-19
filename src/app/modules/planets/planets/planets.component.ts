@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { pluck, take, tap } from 'rxjs/operators';
 import { PlanetService } from 'src/app/core/services/planet.service';
 import { IPlanet } from 'src/app/shared/shared/models/planet';
@@ -10,17 +11,18 @@ import { IPlanet } from 'src/app/shared/shared/models/planet';
 })
 export class PlanetsComponent implements OnInit {
 
-  loadedPage = 1;
+  loadedPage = 0;
   planets = this.planetService.planets;
   isDisabledButton = this.planetService.isAllPlanetsLoaded;
 
-  constructor(private readonly planetService: PlanetService) { }
+  constructor(private readonly planetService: PlanetService,
+    private readonly router: Router) { }
 
   ngOnInit(): void {
     this.getNextPageOfPlanets();
   }
 
   getNextPageOfPlanets() {
-    this.planetService.getPlanetsByNumberPage(this.loadedPage++);
+    this.planetService.getPlanetsByNumberPage(++this.loadedPage);
   }
 }
