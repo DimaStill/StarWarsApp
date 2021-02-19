@@ -9,6 +9,8 @@
         <p>Gravity: {{ planet.gravity }}</p>
         <p>Terrain: {{ planet.terrain }}</p>
         <p>Population: {{ planet.population }}</p>
-        <!-- <p>Residents: {{ planet.residents }}</p> -->
+        <p>Residents:</p>
+        <button mat-button color="primary"
+            *ngFor="let resident of (residents$ | async)">{{ resident.name }}</button>
       </mat-card-content>
 </mat-card>  

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
+import { PeopleService } from 'src/app/core/services/people.service';
 import { PlanetService } from 'src/app/core/services/planet.service';
 
 @Component({
@@ -9,8 +11,14 @@ import { PlanetService } from 'src/app/core/services/planet.service';
 export class PlanetsDetailsComponent implements OnInit {
 
   planet$ = this.planetService.activePlanet$;
+  residents$ = this.planet$.pipe(
+    switchMap(planet => 
+      this.peopleService.getResidentsOfPlanet(planet.residents)
+    )
+  );
 
-  constructor(private readonly planetService: PlanetService) { }
+  constructor(private readonly planetService: PlanetService,
+    private readonly peopleService: PeopleService) { }
 
   ngOnInit(): void {
   }
