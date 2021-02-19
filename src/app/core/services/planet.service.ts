@@ -12,6 +12,7 @@ export class PlanetService {
   constructor(private readonly httpClient: HttpClient) { }
 
   getPlanetsByNumberPage(page = 1): Observable<Array<IPlanet>> {
-    return this.httpClient.get(`/api/planets/?page=${page}`).pipe(pluck('results'));
+    return this.httpClient.get(`http://swapi.dev/api/planets/?page=${page}`)
+      .pipe(pluck('results'));
   }
 }
