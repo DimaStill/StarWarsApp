@@ -9,11 +9,14 @@
         <p>Gravity: {{ planet.gravity }}</p>
         <p>Terrain: {{ planet.terrain }}</p>
         <p>Population: {{ planet.population }}</p>
-        <p>Residents:</p>
-        <button mat-button color="primary"
-            *ngFor="let resident of (residents$ | async)"
-            (click)="openResidentDetails(resident)">
-            {{ resident.name }}
-        </button>
+        <div *ngIf="planet.residents.length">
+          <p>Residents:</p>
+          <button mat-button color="primary"
+
+              *ngFor="let resident of (residents$ | async)"
+              (click)="openResidentDetails(resident)">
+              {{ resident.name }}
+          </button>
+        </div>
       </mat-card-content>
 </mat-card>  
