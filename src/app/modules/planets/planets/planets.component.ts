@@ -9,16 +9,17 @@ import { IPlanet } from 'src/app/shared/models/planet';
   styleUrls: ['./planets.component.scss']
 })
 export class PlanetsComponent implements OnInit {
-
-  loadedPage = 0;
   planets = this.planetService.planets;
+  loadedPage = this.planets.length / 10; // 10 item per page
   isDisabledButton = this.planetService.isAllPlanetsLoaded;
 
   constructor(private readonly planetService: PlanetService,
     private readonly router: Router) { }
 
   ngOnInit(): void {
-    this.getNextPageOfPlanets();
+    if (this.loadedPage === 0) {
+      this.getNextPageOfPlanets();
+    }
   }
 
   getNextPageOfPlanets() {

@@ -10,7 +10,7 @@ import { IPeople } from 'src/app/shared/models/people';
   templateUrl: './planets-details.component.html',
   styleUrls: ['./planets-details.component.scss']
 })
-export class PlanetsDetailsComponent implements OnInit, OnDestroy {
+export class PlanetsDetailsComponent implements OnInit {
 
   planet$ = this.planetService.activePlanet$;
   residents$ = this.planet$.pipe(
@@ -24,10 +24,6 @@ export class PlanetsDetailsComponent implements OnInit, OnDestroy {
     private readonly router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  ngOnDestroy() {
-    this.planetService.setActivePlanet(undefined);
   }
 
   openResidentDetails(people: IPeople) {
