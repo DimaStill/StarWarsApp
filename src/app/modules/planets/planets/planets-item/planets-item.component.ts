@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IPlanet } from 'src/app/shared/shared/models/planet';
+import { IPlanet } from 'src/app/shared/models/planet';
 
 @Component({
   selector: 'app-planets-item',

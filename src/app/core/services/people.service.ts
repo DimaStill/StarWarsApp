@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, from, Observable } from 'rxjs';
 import { bufferCount, mergeMap, switchMap, tap } from 'rxjs/operators';
-import { IPeople } from 'src/app/shared/shared/models/people';
+import { IPeople } from 'src/app/shared/models/people';
 
 @Injectable({
   providedIn: 'root'

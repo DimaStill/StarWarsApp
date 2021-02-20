@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { PeopleService } from 'src/app/core/services/people.service';
 import { PlanetService } from 'src/app/core/services/planet.service';
-import { IPeople } from 'src/app/shared/shared/models/people';
+import { IPeople } from 'src/app/shared/models/people';
 
 @Component({
   selector: 'app-planets-details',

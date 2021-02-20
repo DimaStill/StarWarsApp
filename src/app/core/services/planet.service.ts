@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { pluck, take, tap } from 'rxjs/operators';
-import { IPlanet } from 'src/app/shared/shared/models/planet';
-import { IResponse } from 'src/app/shared/shared/models/response';
+import { IPlanet } from 'src/app/shared/models/planet';
+import { IResponse } from 'src/app/shared/models/response';
 
 @Injectable({
   providedIn: 'root'

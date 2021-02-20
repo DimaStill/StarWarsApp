@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { pluck, take, tap } from 'rxjs/operators';
 import { PlanetService } from 'src/app/core/services/planet.service';
-import { IPlanet } from 'src/app/shared/shared/models/planet';
+import { IPlanet } from 'src/app/shared/models/planet';
 
 @Component({
   selector: 'app-planets',
