@@ -4,6 +4,7 @@ import { HttpClientModule }   from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [],
@@ -12,12 +13,14 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CoreModule
   ],
   exports: [
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CoreModule
   ]
 })
 export class SharedModule { }

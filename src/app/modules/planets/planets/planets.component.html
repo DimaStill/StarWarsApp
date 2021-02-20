@@ -1,6 +1,4 @@
-<div class="loaded-page">
-    Loaded page: {{ loadedPage }}
-</div>
+<app-header [page]="loadedPage"></app-header>
 <div class="planets-layout">
     <app-planets-item 
         *ngFor="let planet of planets" 
