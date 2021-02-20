@@ -1,0 +1,40 @@
+<mat-card class="planet-details-card" *ngIf="planet$ | async as planet">
+    <mat-card-header>
+      <mat-card-title>{{ planet.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="flex center">
+          <mat-icon class="icon">restore</mat-icon>
+          Rotation period: {{ planet.rotation_period }}
+        </p>
+        <p class="flex center">
+          <mat-icon class="icon">height</mat-icon>
+          Diameter: {{ planet.diameter }}
+        </p>
+        <p class="flex center">
+          <mat-icon class="icon">ac_unit</mat-icon>
+          Climate: {{ planet.climate }}
+        </p>
+        <p class="flex center">
+          <mat-icon class="icon">get_app</mat-icon>
+          Gravity: {{ planet.gravity }}
+        </p>
+        <p class="flex center">
+          <mat-icon class="icon">terrain</mat-icon>
+          Terrain: {{ planet.terrain }}
+        </p>
+        <p class="flex center">
+          <mat-icon class="icon">accessibility</mat-icon>
+          Population: {{ planet.population }}
+        </p>
+        <div *ngIf="planet.residents.length">
+          <p>Residents:</p>
+          <button mat-button
+              class="resident-link"
+              *ngFor="let resident of (residents$ | async)"
+              (click)="openResidentDetails(resident)">
+              {{ resident.name }}
+          </button>
+        </div>
+      </mat-card-content>
+</mat-card>  

@@ -1,0 +1,19 @@
+<mat-card class="people-details-card" *ngIf="people$ | async as people">
+    <mat-card-header>
+      <mat-card-title>{{ people.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="flex center">
+          <mat-icon class="icon">height</mat-icon>
+          Height: {{ people.height }}
+        </p>
+        <p class="flex center">
+          <mat-icon class="icon">fiber_manual_record</mat-icon>
+          Mass: {{ people.mass }}
+        </p>
+        <p class="flex center">
+          <mat-icon class="icon">wc</mat-icon>
+          Gender: {{ people.gender }}
+        </p>
+    </mat-card-content>
+</mat-card>  

@@ -1,0 +1,16 @@
+<app-header [page]="loadedPage"></app-header>
+<div class="planets-layout">
+    <app-planets-item 
+        *ngFor="let planet of planets" 
+        [planet]="planet" 
+        (click)="openPlanetDetails(planet)">
+    </app-planets-item>
+</div>
+<div class="load-more-button">
+    <button mat-button
+        class="btn"
+        (click)="getNextPageOfPlanets()" 
+        *ngIf="!(isDisabledButton | async)">
+        Load mode
+    </button>
+</div>

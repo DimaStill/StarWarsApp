@@ -1,0 +1,14 @@
+@import "/src/colors";
+
+.loaded-page {
+    color: $primary-second;
+    position: fixed;
+    background-color: $primary;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    top: 0;
+    font-weight: bold;
+    padding: 10px 0;
+    font-size: 16px;
+}
