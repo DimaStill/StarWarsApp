@@ -10,6 +10,9 @@ const routes: Routes = [
   },
   {
     path: 'resident', loadChildren: () => import('./modules/people/people.module').then(m => m.PeopleModule)
+  },
+  {
+    path: '**', redirectTo: 'planets'
   }
 ];
 
