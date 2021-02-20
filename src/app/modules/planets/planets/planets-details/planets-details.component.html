@@ -11,8 +11,8 @@
         <p>Population: {{ planet.population }}</p>
         <div *ngIf="planet.residents.length">
           <p>Residents:</p>
-          <button mat-button color="primary"
-
+          <button mat-button
+              class="resident-link"
               *ngFor="let resident of (residents$ | async)"
               (click)="openResidentDetails(resident)">
               {{ resident.name }}

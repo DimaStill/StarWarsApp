@@ -1,9 +1,14 @@
+@import "/src/colors";
+
 .loaded-page {
-    color: #f2e28a;
+    color: $primary-second;
     position: fixed;
-    background-color: #ed4259;
+    background-color: $primary;
     width: 100%;
     text-align: center;
     z-index: 1;
     top: 0;
+    font-weight: bold;
+    padding: 10px 0;
+    font-size: 16px;
 }

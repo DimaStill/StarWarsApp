@@ -7,9 +7,10 @@
     </app-planets-item>
 </div>
 <div class="load-more-button">
-    <button mat-button color="warn" 
+    <button mat-button
+        class="btn"
         (click)="getNextPageOfPlanets()" 
-        [disabled]="isDisabledButton | async">
+        *ngIf="!(isDisabledButton | async)">
         Load mode
     </button>
 </div>

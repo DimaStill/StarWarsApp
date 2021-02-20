@@ -1,10 +1,17 @@
+@import "/src/colors";
+
 .planets-layout {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 50px 0;
 }
 
 .load-more-button {
     margin: auto;
     width: fit-content;
+
+    .btn {
+        color: $primary;
+    }
 }

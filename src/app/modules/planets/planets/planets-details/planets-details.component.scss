@@ -1,4 +1,10 @@
+@import "/src/colors";
+
 .planet-details-card {
     width: 50%;
     margin: 10px auto;
+
+    .resident-link {
+        color: $primary-second;
+    }
 }
