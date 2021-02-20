@@ -7,6 +7,9 @@ const routes: Routes = [
   },
   {
     path: 'planets', loadChildren: () => import('./modules/planets/planet.module').then(m => m.PlanetModule)
+  },
+  {
+    path: 'resident', loadChildren: () => import('./modules/people/people.module').then(m => m.PeopleModule)
   }
 ];
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { BehaviorSubject, from, Observable } from 'rxjs';
 import { bufferCount, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { IPeople } from 'src/app/shared/shared/models/people';
 
@@ -8,6 +8,8 @@ import { IPeople } from 'src/app/shared/shared/models/people';
   providedIn: 'root'
 })
 export class PeopleService {
+  private activeResident = new BehaviorSubject(undefined);
+  activeResident$ = this.activeResident.asObservable();
 
   constructor(private readonly httpClient: HttpClient) { }
 
@@ -22,5 +24,9 @@ export class PeopleService {
 
   getPeopleByReference(reference: string): Observable<IPeople> {
     return this.httpClient.get<IPeople>(reference);
+  }
+
+  setActivePeople(people: IPeople) {
+    this.activeResident.next(people);
   }
 }

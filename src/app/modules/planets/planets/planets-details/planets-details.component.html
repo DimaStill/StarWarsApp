@@ -11,6 +11,9 @@
         <p>Population: {{ planet.population }}</p>
         <p>Residents:</p>
         <button mat-button color="primary"
-            *ngFor="let resident of (residents$ | async)">{{ resident.name }}</button>
+            *ngFor="let resident of (residents$ | async)"
+            (click)="openResidentDetails(resident)">
+            {{ resident.name }}
+        </button>
       </mat-card-content>
 </mat-card>  
