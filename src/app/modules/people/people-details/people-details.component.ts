@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from 'src/app/core/services/people.service';
 
 @Component({
   selector: 'app-people-details',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleDetailsComponent implements OnInit {
 
-  constructor() { }
+  people$ = this.peopleService.activeResident$;
+
+  constructor(private readonly peopleService: PeopleService) { }
 
   ngOnInit(): void {
   }

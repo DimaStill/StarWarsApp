@@ -1,1 +1,10 @@
-<p>people-details works!</p>
+<mat-card class="people-details-card" *ngIf="people$ | async as people">
+    <mat-card-header>
+      <mat-card-title>{{ people.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Height: {{ people.height }}</p>
+        <p>Mass: {{ people.mass }}</p>
+        <p>Gender: {{ people.gender }}</p>
+    </mat-card-content>
+</mat-card>  

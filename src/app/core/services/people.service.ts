@@ -8,7 +8,7 @@ import { IPeople } from 'src/app/shared/shared/models/people';
   providedIn: 'root'
 })
 export class PeopleService {
-  private activeResident = new BehaviorSubject(undefined);
+  private activeResident = new BehaviorSubject<IPeople>(undefined);
   activeResident$ = this.activeResident.asObservable();
 
   constructor(private readonly httpClient: HttpClient) { }
